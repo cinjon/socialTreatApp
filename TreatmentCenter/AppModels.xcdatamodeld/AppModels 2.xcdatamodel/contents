@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="AppModels 2" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F37" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Caretaker" representedClassName="Caretaker" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="clients" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Client" inverseName="caretaker" inverseEntity="Client" syncable="YES"/>
+    </entity>
+    <entity name="Center" representedClassName="Center" syncable="YES">
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Child" representedClassName="Child" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="needs" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Client" inverseName="children" inverseEntity="Client" syncable="YES"/>
+    </entity>
+    <entity name="Client" representedClassName="Client" syncable="YES">
+        <attribute name="activePsych" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="arson" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="axisOne" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="axisTwo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birthday" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="childWelfare" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="detox" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="dv" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="employed" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="english" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="felonyBool" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="felonyDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="h5150" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="hasChild" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
+        <attribute name="insurance" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mentalBool" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="methadone" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pregnant" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="residentialOutpatient" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="t90" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="zipcode" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="caretaker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Caretaker" inverseName="clients" inverseEntity="Caretaker" syncable="YES"/>
+        <relationship name="children" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Child" inverseName="parent" inverseEntity="Child" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Caretaker" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Center" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Child" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Client" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>
